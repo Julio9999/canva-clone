@@ -1,0 +1,42 @@
+---
+import { Icon } from "astro-icon/components";
+import logo from "@assets/canva-logo.svg";
+import { Button } from "../ui/button";
+
+const links = [
+  { name: "Diseño" },
+  { name: "Negocios" },
+  { name: "Educación" },
+  { name: "Planes y precios" },
+  { name: "Aprender" },
+];
+---
+
+<nav class="flex gap-4 items-center py-4 lg:px-8 px-3 border justify-between">
+  <article class="flex lg:gap-10 gap-4 items-center">
+      <Icon name="hamburguer-menu"  size={21} />
+      <img src={logo.src} />
+    <ul class="hidden gap-6 lg:flex">
+      {
+        links.map((link) => (
+          <li class="flex gap-1 items-center text-base">
+            <span>{link.name}</span>
+            <Icon name="chevron-down" size={21} />
+          </li>
+        ))
+      }
+    </ul>
+  </article>
+
+  <article class="flex lg:gap-6 gap-4 items-center">
+    <div class="flex gap-6">
+      <Icon name="search" size={21} />
+      <Icon name="question" class="hidden sm:block" size={21} />
+    </div>
+    <div class="flex gap-6">
+      <Button class="lg:hidden font-semibold">Iniciar sesión</Button>
+      <Button class="hidden lg:flex font-semibold" variant="outline">Iniciar sesión</Button>
+      <Button class="hidden lg:flex font-semibold">Registrarme</Button>
+    </div>
+  </article>
+</nav>

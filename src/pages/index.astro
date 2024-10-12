@@ -1,4 +1,9 @@
 ---
+import { Button } from "@/components/ui/button";
+import "../app.css"
+import NavBar from "@/components/shared/NavBar.astro";
+import { PrincipalSlider } from "@/components/ui/principal-slider";
+import CanvaCardContainer from "@/components/ui/CanvaCardContainer.astro";
 
 ---
 
@@ -11,6 +16,22 @@
 		<title>Astro</title>
 	</head>
 	<body>
-		<h1>Astro</h1>
+		<NavBar />
+		<main class="px-4 py-8">
+			<section class="flex flex-col gap-3 mb-8">
+				<h1 class="text-3xl text-center font-bold">¿Qué <span class="gradient-text">diseñaremos</span> hoy?</h1>
+				<p class="text-base font-normal text-center tracking-wide text-grayPrimary" >
+					Con Canva, es muy fácil crear, compartir e imprimir diseños profesionales.
+				</p>
+				<Button class="font-semibold mt-2">Quiero diseñar</Button>
+			</section>
+			<section class="mb-8">
+				<PrincipalSlider client:only />
+			</section>
+
+			<section>
+				<CanvaCardContainer />
+			</section>
+		</main>
 	</body>
 </html>

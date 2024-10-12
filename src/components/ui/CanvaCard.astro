@@ -1,0 +1,31 @@
+---
+import { Icon } from "astro-icon/components";
+import { Button } from "./button";
+
+type Props = CanvaCardProps;
+
+const { 
+    title,
+    subTitle,
+    description,
+    buttonText,
+    secondaryButton 
+    } = Astro.props;
+---
+
+<article class="flex flex-col border-2 border-borderColor rounded-xl px-4 py-6">
+  <div>
+    <div class="flex flex-col gap-6">
+      <div class="flex justify-between">
+        <p class="text-xs font-semibold">{title}</p>
+        <Icon name="crowd" size={21} class="text-yellow-500" />
+      </div>
+      <div class="flex flex-col gap-3">
+        <p class="text-xl font-bold">{subTitle}</p>
+        <p class="text-grayPrimary">{description}</p>
+        <Button class="truncate inline">{buttonText}</Button>
+        {secondaryButton && <Button variant="outline" class="truncate inline border-borderColor  font-semibold">{secondaryButton}</Button>}
+      </div>
+    </div>
+  </div>
+</article>
