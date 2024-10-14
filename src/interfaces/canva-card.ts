@@ -4,4 +4,5 @@ interface CanvaCardProps {
     description: string;
     buttonText: string;
     secondaryButton?: string;
+    bgColor?: string;
 }

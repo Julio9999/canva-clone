@@ -9,11 +9,12 @@ const {
     subTitle,
     description,
     buttonText,
-    secondaryButton 
+    secondaryButton,
+    bgColor
     } = Astro.props;
 ---
 
-<article class="flex flex-col border-2 border-borderColor rounded-xl px-4 py-6">
+<article class={`flex flex-col border border-borderColor rounded-xl px-4 py-6 ${bgColor}`}>
   <div>
     <div class="flex flex-col gap-6">
       <div class="flex justify-between">

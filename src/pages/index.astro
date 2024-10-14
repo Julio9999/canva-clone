@@ -1,37 +1,57 @@
 ---
 import { Button } from "@/components/ui/button";
-import "../app.css"
+import "../app.css";
 import NavBar from "@/components/shared/NavBar.astro";
 import { PrincipalSlider } from "@/components/ui/principal-slider";
 import CanvaCardContainer from "@/components/ui/CanvaCardContainer.astro";
+import TrustedCompanies from "@/components/ui/TrustedCompanies.astro";
+import CanvaServicesContainer from "@/components/ui/CanvaServicesContainer.astro";
+import CanvaTemplates from "@/components/ui/CanvaTemplates.astro";
 
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<NavBar />
-		<main class="px-4 py-8">
-			<section class="flex flex-col gap-3 mb-8">
-				<h1 class="text-3xl text-center font-bold">¿Qué <span class="gradient-text">diseñaremos</span> hoy?</h1>
-				<p class="text-base font-normal text-center tracking-wide text-grayPrimary" >
-					Con Canva, es muy fácil crear, compartir e imprimir diseños profesionales.
-				</p>
-				<Button class="font-semibold mt-2">Quiero diseñar</Button>
-			</section>
-			<section class="mb-8">
-				<PrincipalSlider client:only />
-			</section>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <body>
+    <NavBar />
+    <main class="px-4 py-8 bg-white">
+      <section class="flex flex-col gap-3 mb-8">
+        <h1 class="text-3xl text-center font-bold">
+          ¿Qué <span class="gradient-text">diseñaremos</span> hoy?
+        </h1>
+        <p
+          class="text-base font-normal text-center tracking-wide text-grayPrimary"
+        >
+          Con Canva, es muy fácil crear, compartir e imprimir diseños
+          profesionales.
+        </p>
+        <Button class="font-semibold mt-2">Quiero diseñar</Button>
+      </section>
+      <section class="mb-8">
+        <PrincipalSlider client:only />
+      </section>
 
-			<section>
-				<CanvaCardContainer />
-			</section>
-		</main>
-	</body>
+      <section class="mb-8">
+        <CanvaCardContainer />
+      </section>
+
+      <section class="mb-8">
+        <TrustedCompanies />
+      </section>
+
+	  <section class="mb-8">
+      <CanvaServicesContainer />
+	  </section>
+
+    <section class="mb-8">
+      <CanvaTemplates />
+    </section>
+    </main>
+  </body>
 </html>

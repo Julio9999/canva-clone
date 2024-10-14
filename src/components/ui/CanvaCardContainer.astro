@@ -2,35 +2,44 @@
 import CanvaCard from "./CanvaCard.astro";
 
 const cards: CanvaCardProps[] = [
-    {
-        title: "Para una persona",
-        subTitle: "Canva Gratis",
-        description: "Para diseñar o trabajar en cualquier tipo de proyecto.",
-        buttonText: "Obtén Canva Gratis"
-    },
-    {
-        title: "Para una persona",
-        subTitle: "Canva Pro",
-        description: "Para hacer crecer tu marca o proyecto personal con funciones prémium.",
-        buttonText: "Empieza tu prueba gratis de Pro"
-    },
-    {
-        title: "Para tu equipo",
-        subTitle: "Canva Equipos",
-        description: "Para equipos que quieran crear juntos con flujos de trabajo y herramientas prémium para el lugar de trabajo.",
-        buttonText: "Empieza tu prueba gratis de Equipos",
-        secondaryButton: "Habla con Ventas"
-    },
-]
-
+  {
+    title: "Para una persona",
+    subTitle: "Canva Gratis",
+    description: "Para diseñar o trabajar en cualquier tipo de proyecto.",
+    buttonText: "Obtén Canva Gratis",
+    bgColor: "bg-[#40576d12]"
+  },
+  {
+    title: "Para una persona",
+    subTitle: "Canva Pro",
+    description:
+      "Para hacer crecer tu marca o proyecto personal con funciones prémium.",
+    buttonText: "Empieza tu prueba gratis de Pro",
+    bgColor: "bg-[#f1ebff]"
+  },
+  {
+    title: "Para tu equipo",
+    subTitle: "Canva Equipos",
+    description:
+      "Para equipos que quieran crear juntos con flujos de trabajo y herramientas prémium para el lugar de trabajo.",
+    buttonText: "Empieza tu prueba gratis de Equipos",
+    secondaryButton: "Habla con Ventas",
+    bgColor: "bg-[#f1ebff]"
+  },
+];
 ---
 
+<p class="text-2xl font-bold text-center mb-8">
+  Una herramienta ideal para todo el mundo
+</p>
+<article class="flex flex-col gap-6">
+  {cards.map((card) => <CanvaCard {...card} />)}
+</article>
 
-<p class="text-2xl font-bold text-center mb-8">Una herramienta ideal para todo el mundo</p>
-<div class="flex flex-col gap-6">
-    {
-        cards.map(card => (
-            <CanvaCard {...card} />
-        ))
-    }
-</div>
+<article class="mt-8">
+  <p class="text-center">
+    <span class="text-primary underline mr-1"
+      >Los centros educativos y las organizaciones sin fines de lucro</span
+    >pueden usar las funciones prémium de Canva gratis
+  </p>
+</article>

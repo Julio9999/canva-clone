@@ -1,0 +1,40 @@
+---
+import CanvaService from "./CanvaService.astro";
+import ia from "@assets/benefits-magic-studio-fallback-en-654x442.webp";
+import together from "@assets/benefits-together-es-mx-654x442.webp";
+import print from "@assets/benefits-print-es-mx-654x442.webp";
+
+const services: CanvaService[] = [
+    {
+        title: "Crea con IA",
+        description: "Redefine tu forma de crear con Estudio Mágico, nuestro paquete de herramientas con tecnología de la IA. Genera texto con la voz de la marca usando Texto Mágico o transforma tus fotos con Edición Mágica.",
+        buttonText: "Descubrir ahora",
+        image: ia 
+    },
+    {
+        title: "Diseña con otras personas",
+        description: "Invita a tus amistades y a tu familia a diseñar contigo, o arma tu propio equipo para diseñar en conjunto. Nuestras funciones de colaboración te permiten comentar y trabajar en tiempo real en presentaciones pizarras online docs videos  o la planificación de una fiesta de cumpleaños.",
+        buttonText: "Quiero diseñar",
+        image: together        
+    },
+    {
+        title: "Diseña e imprime en un mismo lugar",
+        description: "Convierte tus recuerdos en álbumes de fotos; tus diseños, en playeras; y la identidad de tu marca, en tarjetas de presentación flyers  o invitaciones .Imprime aquí mismo todo lo que necesites y te lo enviamos gratis a tu casa.",
+        buttonText: "Imprime tu diseño",
+        image: print
+    }
+]
+
+---
+
+
+{
+    services.map(({title, description, buttonText, image}) => (
+        <CanvaService 
+            title={title}
+            description={description}
+            buttonText={buttonText}
+            image={image}
+        />
+    ))
+}

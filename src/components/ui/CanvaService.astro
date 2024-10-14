@@ -1,0 +1,35 @@
+---
+import { Image } from "astro:assets";
+import { Button } from "./button";
+
+type Props = CanvaService;
+
+
+const { 
+    image, 
+    title, 
+    description, 
+    buttonText
+  } = Astro.props;
+
+---
+
+<article class="mt-8">
+    <Image
+        height={194}
+        width={288}
+        src={image}
+        alt="ia"
+        class="rounded-2xl"
+     />
+
+     <div>
+        <h2 class="text-2xl font-bold my-4">{title}</h2>
+        <p>
+            {description}
+        </p>
+
+        <Button class="w-full mt-4" variant="outline">{buttonText}</Button>
+     </div>
+</article>
+
