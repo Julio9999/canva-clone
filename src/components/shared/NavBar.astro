@@ -2,6 +2,7 @@
 import { Icon } from "astro-icon/components";
 import logo from "@assets/canva-logo.svg";
 import { Button } from "../ui/button";
+import { NavbarSideMenu } from "../ui/navbar-side-menu";
 
 const links = [
   { name: "Diseño" },
@@ -12,10 +13,12 @@ const links = [
 ];
 ---
 
-<nav class="flex gap-4 items-center py-4 lg:px-8 px-3 border justify-between bg-white sticky z-10 top-0">
+<nav
+  class="flex gap-4 items-center py-4 lg:px-8 px-3 border justify-between bg-white sticky z-10 top-0"
+>
   <article class="flex lg:gap-10 gap-4 items-center">
-      <Icon name="hamburguer-menu"  size={21} />
-      <img src={logo.src} />
+    <NavbarSideMenu client:only />
+    <img src={logo.src} />
     <ul class="hidden gap-6 lg:flex">
       {
         links.map((link) => (
@@ -35,7 +38,9 @@ const links = [
     </div>
     <div class="flex gap-6">
       <Button class="lg:hidden font-semibold">Iniciar sesión</Button>
-      <Button class="hidden lg:flex font-semibold" variant="outline">Iniciar sesión</Button>
+      <Button class="hidden lg:flex font-semibold" variant="outline"
+        >Iniciar sesión</Button
+      >
       <Button class="hidden lg:flex font-semibold">Registrarme</Button>
     </div>
   </article>
