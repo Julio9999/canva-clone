@@ -1,0 +1,45 @@
+---
+import teams from "@assets/teams_univ_mobile.webp";
+import { Image } from "astro:assets";
+import { Button } from "./button";
+import { Icon } from "astro-icon/components";
+---
+
+<h2 class="text-2xl font-bold my-4">El plan para ponerse manos a la obra</h2>
+<p class="mb-8 text-grayPrimary">
+  Con Canva Equipos, todo el mundo puede diseñar en conjunto
+</p>
+
+<article class="mb-8">
+  <Image
+    width={300}
+    height={300}
+    format="avif"
+    src={teams}
+    alt="template1"
+    class="rounded-lg border w-full"
+  />
+</article>
+
+<article class="w-full mb-8">
+  <Button class="w-full flex gap-3">
+    <Icon name="team" size={22} />
+    Explora Canva Equipos
+  </Button>
+</article>
+
+<article class="mb-4">
+  <h2 class="font-bold text-base mb-1">Con la eficiencia y la tecnología de la IA</h2>
+  <p class="text-base">Aprovecha la IA para mantenerte fiel a la marca cuando creas textos y plantillas, o editas videos.</p>
+</article>
+
+<article class="mb-4">
+  <h2 class="font-bold text-base mb-1">Gestiona tu marca con recursos internos</h2>
+  <p class="text-base">Configura Kits de Marca y plantillas que tu equipo puede usar en sus diseños.</p>
+</article>
+
+
+<article class="mb-4">
+  <h2 class="font-bold text-base mb-1">Con la eficiencia y la tecnología de la IA</h2>
+  <p class="text-base">Aprovecha la IA para mantenerte fiel a la marca cuando creas textos y plantillas, o editas videos.</p>
+</article>
