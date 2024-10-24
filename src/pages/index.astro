@@ -9,7 +9,9 @@ import CanvaServicesContainer from "@/components/ui/CanvaServicesContainer.astro
 import CanvaTemplates from "@/components/ui/CanvaTemplates.astro";
 import CanvaSectionthirth from "@/components/ui/CanvaSectionthirth.astro";
 import CanvaSectionFourth from "@/components/ui/CanvaSectionFourth.astro";
-
+import CanvaSectionFive from "@/components/ui/CanvaSectionFive.astro";
+import CanvaSectionSixth from "@/components/ui/CanvaSectionSixth.astro";
+import CanvaFooter from "@/components/ui/CanvaFooter.astro";
 ---
 
 <html lang="en">
@@ -20,9 +22,9 @@ import CanvaSectionFourth from "@/components/ui/CanvaSectionFourth.astro";
     <meta name="generator" content={Astro.generator} />
     <title>Astro</title>
   </head>
-  <body>
+  <body class="bg-white py-32">
     <NavBar />
-    <main class="px-4 py-8 bg-white">
+    <main class="px-4 py-8 ">
       <section class="flex flex-col gap-3 mb-8">
         <h1 class="text-3xl text-center font-bold">
           ¿Qué <span class="gradient-text">diseñaremos</span> hoy?
@@ -36,7 +38,7 @@ import CanvaSectionFourth from "@/components/ui/CanvaSectionFourth.astro";
         <Button class="font-semibold mt-2">Quiero diseñar</Button>
       </section>
       <section class="mb-8">
-        <PrincipalSlider client:only />
+        <PrincipalSlider client:only="solid-js" />
       </section>
 
       <section class="mb-8">
@@ -47,21 +49,33 @@ import CanvaSectionFourth from "@/components/ui/CanvaSectionFourth.astro";
         <TrustedCompanies />
       </section>
 
-	  <section class="mb-8">
-      <CanvaServicesContainer />
-	  </section>
+      <section class="mb-8">
+        <CanvaServicesContainer />
+      </section>
 
-    <section class="mb-8">
-      <CanvaTemplates />
-    </section>
+      <section class="mb-8">
+        <CanvaTemplates />
+      </section>
 
-    <section class="mb-8">
-      <CanvaSectionthirth />
-    </section>
+      <section class="mb-8">
+        <CanvaSectionthirth />
+      </section>
 
-    <section class="mb-8">
-      <CanvaSectionFourth />
-    </section>
+      <section class="mb-8">
+        <CanvaSectionFourth />
+      </section>
+
+      <section class="mb-8"> 
+        <CanvaSectionFive />
+      </section>
+
+      <section class="mb-8">
+        <CanvaSectionSixth />
+      </section>
     </main>
+
+    <footer>
+      <CanvaFooter  />
+    </footer>
   </body>
 </html>

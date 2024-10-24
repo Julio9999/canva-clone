@@ -48,7 +48,8 @@ export default {
         },
         darkPrimary: "hsl(var(--dark-primary))",
         borderColor: "hsla(var(--border-color))",
-        grayPrimary: "hsla(var(--gray-color))"
+        grayPrimary: "hsla(var(--gray-color))",
+        darkBlue: "hsla(var(--dark-blue))"
       },
       borderRadius: {
         lg: "var(--radius)",

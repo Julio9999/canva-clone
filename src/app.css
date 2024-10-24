@@ -39,6 +39,9 @@
     --border-color: 211, 25%, 30%, 0.15;
 
     --gray-color: 207, 26%, 7%, 0.7;
+
+
+    --dark-blue: 207, 26%, 7%;
   }
 
   [data-kb-theme="dark"] {
@@ -85,7 +88,7 @@
 
 @font-face {
   font-family: 'CanvaFont';
-  src: url('/public/fonts/cff149ee1e9d2be50ac77bcd86769d05.woff2') format('woff2');
+  src: url('/fonts/cff149ee1e9d2be50ac77bcd86769d05.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
