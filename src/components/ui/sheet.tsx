@@ -35,19 +35,24 @@ export const sheetVariants = cva(
 
 type sheetContentProps<T extends ValidComponent = "div"> = ParentProps<
 	DialogContentProps<T> &
-		VariantProps<typeof sheetVariants> & {
-			class?: string;
-		}
+	VariantProps<typeof sheetVariants> & {
+		class?: string;
+	}
 >;
 
+interface SheetContentProps<T> extends sheetContentProps {
+	closeButton: boolean;
+}
+
 export const SheetContent = <T extends ValidComponent = "div">(
-	props: PolymorphicProps<T, sheetContentProps<T>>,
-) => {
-	const merge = mergeProps<sheetContentProps<T>[]>({ side: "right" }, props);
-	const [local, rest] = splitProps(merge as sheetContentProps, [
+	props: PolymorphicProps<T, SheetContentProps<T>>
+)  => {
+	const merge = mergeProps<SheetContentProps<T>[]>({ side: "right", closeButton: true }, props);
+	const [local, rest] = splitProps(merge as SheetContentProps<T>, [
 		"class",
 		"children",
 		"side",
+		"closeButton"
 	]);
 
 	return (
@@ -62,23 +67,26 @@ export const SheetContent = <T extends ValidComponent = "div">(
 				{...rest}
 			>
 				{local.children}
-				<DialogPrimitive.CloseButton class="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-[opacity,box-shadow] hover:opacity-100 focus:outline-none focus:ring-[1.5px] focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none">
-					<svg
-						xmlns="http://www.w3.org/2000/svg"
-						viewBox="0 0 24 24"
-						class="h-4 w-4"
-					>
-						<path
-							fill="none"
-							stroke="currentColor"
-							stroke-linecap="round"
-							stroke-linejoin="round"
-							stroke-width="2"
-							d="M18 6L6 18M6 6l12 12"
-						/>
-						<title>Close</title>
-					</svg>
-				</DialogPrimitive.CloseButton>
+				{
+					local.closeButton &&
+					<DialogPrimitive.CloseButton class="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-[opacity,box-shadow] hover:opacity-100 focus:outline-none focus:ring-[1.5px] focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							viewBox="0 0 24 24"
+							class="h-4 w-4"
+						>
+							<path
+								fill="none"
+								stroke="currentColor"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="M18 6L6 18M6 6l12 12"
+							/>
+							<title>Close</title>
+						</svg>
+					</DialogPrimitive.CloseButton>
+				}
 			</DialogPrimitive.Content>
 		</DialogPrimitive.Portal>
 	);

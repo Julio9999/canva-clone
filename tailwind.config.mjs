@@ -18,6 +18,7 @@ export default {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        liHover: "var(--li-hover)",
         primary: {
           DEFAULT: "hsla(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",

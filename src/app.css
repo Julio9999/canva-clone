@@ -42,6 +42,8 @@
 
 
     --dark-blue: 207, 26%, 7%;
+
+    --li-hover: rgba(64, 87, 109, .07);
   }
 
   [data-kb-theme="dark"] {
@@ -106,4 +108,5 @@ body {
   -webkit-text-fill-color: transparent; 
   background-clip: text; 
   text-fill-color: transparent; 
+  color:
 }
