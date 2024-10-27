@@ -10,7 +10,7 @@ export const NavbarSideMenu = () => {
     return (
         <Sheet>
             <SheetTrigger>
-                <Button variant="outline" class="p-0 border-none">
+                <Button variant="outline" class="py-0 px-2 border-none shadow-none">
                     <AiOutlineMenu size={21} />
                 </Button>
             </SheetTrigger>
