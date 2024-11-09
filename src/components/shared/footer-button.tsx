@@ -26,7 +26,7 @@ export const FooterButton = () => {
             {
                 <div
                     class={
-                        cn("border z-50 -bottom-10 fixed bg-white w-full p-3 text-center transition-all", {
+                        cn("border z-50 -bottom-full fixed bg-white w-full p-3 text-center transition-all", {
                             "bottom-0": show()
                         })
                     }

@@ -1,34 +1,24 @@
 ---
 import { Icon } from "astro-icon/components";
 import logo from "@assets/canva-logo.svg";
-import { Button } from "../ui/button";
 import { NavbarSideMenu } from "../ui/side-bar/navbar-side-menu";
-
-const links = [
-  { name: "Diseño" },
-  { name: "Negocios" },
-  { name: "Educación" },
-  { name: "Planes y precios" },
-  { name: "Aprender" },
-];
+import { NavbarButtons } from "./navbar-buttons";
+import { NavbarSideMenuDesktop } from "../ui/side-bar/navbar-side-menu-desktop";
 ---
 
 <nav
   class="flex gap-4 items-center py-4 lg:px-8 px-3 border justify-between bg-white sticky z-10 top-0"
 >
-  <article class="flex lg:gap-10 gap-4 items-center">
-    <NavbarSideMenu client:only="solid-js" />
-    <img src={logo.src} />
-    <ul class="hidden gap-6 lg:flex">
-      {
-        links.map((link) => (
-          <li class="flex gap-1 items-center text-base">
-            <span>{link.name}</span>
-            <Icon name="chevron-down" size={21} />
-          </li>
-        ))
-      }
-    </ul>
+  <article class="flex lg:gap-10 gap-4  items-center">
+    <div class="lg:hidden">
+      <NavbarSideMenu client:only="solid-js" />
+    </div>
+    <div>
+    </div>
+    <img src={logo.src} class="flex-1" />
+    <div class="w-full">
+      <NavbarSideMenuDesktop client:only="solid-js" />
+    </div>
   </article>
 
   <article class="flex lg:gap-6 gap-4 items-center">
@@ -37,11 +27,7 @@ const links = [
       <Icon name="question" class="hidden sm:block" size={21} />
     </div>
     <div class="flex gap-6">
-      <Button class="lg:hidden font-semibold">Iniciar sesión</Button>
-      <Button class="hidden lg:flex font-semibold" variant="outline"
-        >Iniciar sesión</Button
-      >
-      <Button class="hidden lg:flex font-semibold">Registrarme</Button>
+      <NavbarButtons client:only="solid-js" />
     </div>
   </article>
 </nav>

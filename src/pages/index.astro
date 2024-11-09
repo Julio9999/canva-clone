@@ -27,16 +27,18 @@ import { FooterButton } from "@/components/shared/footer-button";
     <NavBar />
     <main class="px-4 py-8 ">
       <section class="flex flex-col gap-3 mb-8">
-        <h1 class="text-3xl text-center font-bold">
+        <h1 class="text-3xl md:text-6xl text-center font-bold">
           ¿Qué <span class="gradient-text">diseñaremos</span> hoy?
         </h1>
         <p
-          class="text-base font-normal text-center tracking-wide text-grayPrimary"
+          class="text-base font-normal text-center tracking-wide text-grayPrimary md:text-2xl"
         >
           Con Canva, es muy fácil crear, compartir e imprimir diseños
           profesionales.
         </p>
-        <Button class="font-semibold mt-2">Quiero diseñar</Button>
+        <div class="flex items-center justify-center">
+          <Button class="font-semibold mt-2 w-full md:w-auto">Quiero diseñar</Button>
+        </div>
       </section>
       <section class="mb-8">
         <PrincipalSlider client:only="solid-js" />
